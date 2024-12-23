@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <style>
+        body {
+            background-color: #D2B48C;
+        }
+        body {
+        color: #4E3517
+        }
+    </style>
+</head>
+<body>
+    <h1>Главная страница</h1>
+    <p style="font-family: Garamond, sans-serif;"></p>
+    <nav>
+        <ul>
+            <li><a href="{% url 'main1' %}">Главная</a></li>
+            <li><a href="{% url 'registration' %}">Страница регистрации</a></li>
+            <li><a href="{% url 'examples' %}">Примеры работ</a></li>
+            <li><a href="{% url 'about' %}">О нас</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

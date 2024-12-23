@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <style>
+        body {
+        background-color: #D2B48C
+        }
+        body {
+        color: #4E3517
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Регистрация</h1>
+    <p style="font-family: Garamond, sans-serif;"></p>
+    <p style="font-size: 20px;"></p>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {% if success %}
+        <p style="color: green;">{{ success }}</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {% if form %}
+            {{ form.as_p }}
+        {% else %}
+            <label for="username">Введите ФИО:</label>
+            <input type="text" id="username" name="username" maxlength="50" required><br>
+
+            <label for="phone_number">Введите номер телефона:</label>
+            <input type="text" id="phone_number" name="phone_number" maxlength="12" required><br>
+
+            <label for="email">Введите имейл:</label>
+            <input type="text" id="email" name="email" required><br>
+
+            <select name="question">
+                <option value="Косметический ремонт">Косметический ремонт</option>
+                <option value="Капитальный ремонт">Капитальный ремонт</option>
+            </select><br>
+            <label>На какую сумму рассчитываете?</label>
+            <textarea name="comment"></textarea><br>
+        {% endif %}
+
+        <button type="submit">Зарегестироваться</button>
+
+        <button onclick="location.href='{% url 'main1' %}'">На главную</button>
+    </form>
+</body>
+</html>
