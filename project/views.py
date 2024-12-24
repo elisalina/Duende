@@ -30,8 +30,7 @@ users = ["existing_user1", "existing_user2"]
 
 def registration_view(request):
     if request.method == "POST":
-        form = UserRegisterForm(request.POST) if 'form' in locals() else None
-
+        form = UserRegisterForm(request.POST)
         if form and form.is_valid():
             user = User(
                 username=form.cleaned_data['username'],
@@ -40,14 +39,16 @@ def registration_view(request):
                 question=form.cleaned_data['question'],
                 comment=form.cleaned_data['comment']
             )
-            user.save()
 
+            user = form.save()
             return render(request, 'registration.html', {'success': 'Регистрация прошла успешно!'})
-        return render(request, 'registration.html', {'form': form, 'error': 'Пожалуйста, исправьте ошибки в форме.'})
+        else:
+            return render(request, 'registration.html',
+                          {'form': form, 'error': 'Пожалуйста, исправьте ошибки в форме.'})
 
     else:
-        form = UserRegisterForm() if 'UserRegistrationForm' in locals() else None
-        return render(request, 'registration.html', {'form': form})
+        form = UserRegisterForm()
+    return render(request, 'registration.html', {'form': form})
 
 
 
