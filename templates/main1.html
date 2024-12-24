@@ -7,15 +7,33 @@
     <style>
         body {
             background-color: #D2B48C;
+            color: #4E3517;
+            font-family: Garamond, serif;
+            line-height: 1.6;
+            font-size: 18px;
         }
-        body {
-        color: #4E3517
+        h1 {
+            font-family: 'Arial Black', sans-serif;
+            color: #4E3517;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 5px 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #4E3517;
+        }
+        p {
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
     <h1>Главная страница</h1>
-    <p style="font-family: Garamond, sans-serif;"></p>
     <nav>
         <ul>
             <li><a href="{% url 'main1' %}">Главная</a></li>
@@ -24,5 +42,21 @@
             <li><a href="{% url 'about' %}">О нас</a></li>
         </ul>
     </nav>
+    <div><img src="/static/images/1.jpg" style="width: auto; height: 400px;"></div>
+    <h2>Услуги</h2>
+    <p>Ремонт квартир и офисов.</p>
+    <p>Косметический ремонт:</p>
+    <ul>
+        <li>Поменять розетки</li>
+        <li>Переклеить обои</li>
+        <li>Поставить стеклянные перегородки</li>
+    </ul>
+    <p>Капитальный ремонт:</p>
+    <ul>
+        <li>Ремонт с нуля</li>
+        <li>Провести электрику</li>
+        <li>Провести сантехнику</li>
+        <li>Положить/поменять полы</li>
+    </ul>
 </body>
 </html>

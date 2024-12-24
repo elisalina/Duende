@@ -24,7 +24,6 @@ class UserRegisterForm(forms.Form):
         label="На какую сумму рассчитываете?",
         widget=forms.Textarea(attrs={"placeholder": "Напишите комментарий"})
     )
-
     class Meta:
         model = User
         fields = ['username', 'phone_number', 'email', 'question', 'comment']

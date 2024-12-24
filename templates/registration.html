@@ -5,16 +5,24 @@
     <title>Регистрация</title>
     <style>
         body {
-        background-color: #D2B48C
-        }
-        body {
-        color: #4E3517
+        background-color: #D2B48C;
+        color: #4E3517;
+        font-family: Garamond, serif;
+        line-height: 1.6;
+        font-size: 19px;
         }
 
     </style>
 
 </head>
 <body>
+    {% if form.errors %}
+    <ul style="color: red;">
+        {% for field, errors in form.errors.items %}
+            <li>{{ field }}: {{ errors }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <h1>Регистрация</h1>
     <p style="font-family: Garamond, sans-serif;"></p>
     <p style="font-size: 20px;"></p>

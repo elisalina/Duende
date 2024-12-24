@@ -6,22 +6,37 @@
     <title>О нас</title>
     <style>
         body {
-        background-color: lightblue
+        background-color: lightblue;
+        font-family: Garamond, serif;
+        line-height: 1.6;
+        }
+        h1 {
+            font-family: 'Arial Black', sans-serif;
+            color: #13294E;
         }
         p {
-            font-size: 24px;
+            font-size: 22px;
         }
-        body {
-        color: #13294E
+        p {
+            margin: 10px 0;
+        }
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #13294E;
         }
     </style>
 </head>
 <body>
     <h1 style="font-family: Garamond, sans-serif;">О нас</h1>
-    <p>
-        Duende - это семейное дело. Это компания первоклассных строителей,
-        которые делают всё быстро и качественно. Обращайтесь к нам - не пожалеете!
-    </p>
+    <p>Duende - это семейное дело.</p>
+    <p>Это компания первоклассных строителей,</p>
+    <p>которые делают всё быстро и качественно.</p>
+    <p>Обращайтесь к нам - не пожалеете!</p>
+    <footer>
+    <p>Дата создания: {% now "d.m.Y" %}</p>
+</footer>
     <button onclick="location.href='{% url 'main1' %}'">На главную</button>
 </body>
 </html>
